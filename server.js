@@ -2,11 +2,7 @@
 
 const express = require('express');
 const app = express();
-const os = require('os');
-
-const bodyParser = require('body-parser')
-app.use(bodyParser.urlencoded({ extended: true}));
-app.use(bodyParser.json());
+app.enable('trust proxy');
 
 app.use('/public', express.static(process.cwd() + '/public'));
 
